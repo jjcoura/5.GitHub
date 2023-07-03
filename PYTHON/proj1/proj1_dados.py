@@ -5,20 +5,20 @@ from defs import *
 
 defs.limpaterminal()
 
-escolha = defs.menu()
+escolha = menu()
 
 if escolha == '1':
-    defs.cadastro()
+    cadastro()
 elif escolha == '2':
-    defs.mostrarDados()
+    mostrarDados()
 elif escolha == '3':
-    defs.clientesCadastrados()
+    clientesCadastrados()
 elif escolha == '4':
-    defs.relatorio()
+    relatorio()
 elif escolha == '0':
     print('\033[1;36mFINALIZANDO O PROGRAMA...\033[m')
 else:
-    defs.limpaTerminal()
-    defs.criaBarra()
+    limpaTerminal()
+    linha()
     print('\033[1;31m"Favor inserir uma opção válida!"\033[m')
-    defs.criaBarra()
+    linha()
