@@ -1,5 +1,5 @@
 import validar
-from datetime import datetime
+import datetime
 import os
 
 def limpaTerminal():
