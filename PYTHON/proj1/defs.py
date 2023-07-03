@@ -40,7 +40,7 @@ for linha in lerlogins.readlines():
         linha()
         print('\033[1;31mLOGIN EXISTENTE!\033[m')
         linha()
-        return 
+     
     lerlogins.close()
     
     senha      = validar.senha()
@@ -59,7 +59,7 @@ for linha in lerlogins.readlines():
                  f'- Data de Nascimento: {data} - Número de celular: {cel} - '
                  f'Endereço: {ed}\n')    
     logins.close()
-    return
+                
 
 
 def mostrarDados():

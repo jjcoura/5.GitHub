@@ -1,4 +1,4 @@
-from defs import *
+import defs
 
 def nome():
     while True:

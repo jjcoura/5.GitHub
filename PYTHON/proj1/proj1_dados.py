@@ -1,7 +1,7 @@
 """Crie um programa que faça o cadastro de clientes e salve os dados 
 e ainda seja possivel gerar um relatório final."""
 
-from defs import *
+import defs
 
 defs.limpaterminal()
 
