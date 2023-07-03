@@ -5,6 +5,7 @@ import os
 def limpaTerminal():
     return os.system('cls' if os.name == 'nt' else 'clear')
 
+
 def linha():
     return '-' * 32
 
@@ -14,7 +15,7 @@ mes = data.mouth
 ano = data.year
 
 def menu():
-    print('''========= <<< \033[1;96m "Sk8-Life" \033[m >>> =========\n
+    print('''========= <<< \033[1;96m "LOJA LEGAL" \033[m >>> =========\n
              |   \033[1;36m[1]          \033[m Cadastrar Cliente    |\n
              |   \033[1;36m[1]          \033[m Dados do Cliente     |\n
              |   \033[1;36m[1]          \033[m Mostrar Clientes     |\n
@@ -30,11 +31,8 @@ def cadastro():
     limpaTerminal()
     print('=== < \033[1;92m        CADASTRAR USUÁRIO\033[m       > ===')
     nome = validar.nome()
-    login = validar.login()
-    
-    
-# conferir se já tem login cadastrado
-lerlogins = open('logins.txt', 'rt')
+    login = validar.login()  
+lerlogins = open('logins.txt', 'rt') # conferir se já tem login cadastrado
 for linha in lerlogins.readlines():
     valores = linha.split('-')
     if login == valores[1].split(':')[1].strip(): # Cria lista com valores da linha
@@ -100,8 +98,39 @@ def mostrarDados():
         linha()
         
  
+ 
  # exibir todos os clientes já cadastrados       
-def clientesCadastrados():        
+def clientesCadastrados(): 
+    limpaTerminal()
+    print('=== < \033[1;92m        CLIENTES CADASTRADOS\033[m       > ===')   
+    logins = open('logins.txt', 'r')
+    for linha in logins.readlines():
+        l = linha.split('-')
+        print(f'\033[1;92m]{l[0]} | {l[1]}\033[m') 
+    linha()  
+    return
         
         
+def relatorio():
+    countClient = 0 
+    nomess = []
+    logins = open('logins.txt', 'r')
+    for linhas in logins.readlines():
+        l = linhas.split('-')
+        nomess.append(l[0])
+        countClient += 1
+        
+    limpaTerminal()
+    arquivo = open('dados.txt', 'w+')
+    arquivo.write('Relatório de Clientes\n')
+    arquivo.write(f'A loja LEGAL possui {countClient} clientes(s)\n')    
     
+    for i in range(len(nomess)):
+        arquivo.write(str(f'{i + 1}.{nomess[1].split(":")[1]}\n'))
+    arquivo.write(f'Russas, {dia}/{mes}/{ano}.')
+    linha()
+    print('\033[1;32mRelatorio gerado em "dados.txt"\033[m')
+    linha()
+    arquivo.close()
+    return
+       
