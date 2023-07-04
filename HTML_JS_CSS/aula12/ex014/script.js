@@ -15,6 +15,6 @@ function carregar() {
     } else {
         //BOA NOITE
         img.src = 'noite-redondo.png'
-        document.body.style.background = '#201c1c'
+        document.body.style.background = '#050505'
     }
 }
