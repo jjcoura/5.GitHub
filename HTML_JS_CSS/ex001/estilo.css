@@ -6,6 +6,8 @@ body {
 
 header {}
 
-section {}
+section {
+    background: white;
+}
 
 footer {}
