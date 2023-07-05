@@ -1,11 +1,12 @@
 function carregar() {
-    var bicho = ''
-    var img = document.createElement('img')    
-    img.setAttribute('id', 'ft')
-        if ( bicho = 'cao') {
-            // Cachorro
-            img.src = 'ft-cao.png'
-        } else {
-            // BICINHO NÂO ENCONTRADO!!!
-        }
+    var bicho = document.getElementById('txtani').value.toLowerCase();
+    var img = document.getElementById('imagem');
+
+    if (bicho === 'cachorro' || bicho === 'cao' || bicho === 'toto' || bicho === 'totó' || bicho === 'cão') {
+        // Cachorro
+        img.src = 'ft-cao.png';
+    } else {
+        // BICINHO NÃO ENCONTRADO!!!
+        img.src = 'imagem-nao-encontrada.png';
+    }
 }

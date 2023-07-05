@@ -6,39 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador de animais</title>
     <link rel="stylesheet" href="estilo.css">
+</head>
 
 <body>
     <header>
         <h1>BuscaAnimal</h1>
-
     </header>
-</body>
-<section>
-    <div>
-        <p>Animal:
-            <input type="text" name="txtani" id="txtani">
-        </p>        
-        <input type="button" value="Verificar" onclick="verificar()">
 
-    </div id = 'msg'>
-        Escreva o nome do animal que você quer ver!
-    <div>  
-        <div id = 'ft'>
-            <img id="imagem" src="ft-cao.png" alt="fotoAnimal">
-        </div>     
+    <section>
+        <div>
+            <p>Animal:
+                <input type="text" name="txtani" id="txtani">
+            </p>
+            <input type="button" value="Verificar" onclick="carregar()">
+        </div>
 
-    </div>
+        <div id="msg">
+            Escreva o nome do animal que você quer ver!
+        </div>
 
-</section>
-<footer>
-    <p>&copy; jjproj</p>
+        <div id="ft">
+            <img id="imagem" src="ft-init.png" alt="fotoAnimal">
+        </div>
+    </section>
 
-</footer>
-<script src="script.js"></script>
-</head>
+    <footer>
+        <p>&copy; jjproj</p>
+    </footer>
 
-<body>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
