@@ -10,6 +10,10 @@ function carregar() {
         // Gato
         img.src = 'ft-gato.png'
         document.body.style.backgroundColor = '#9e9283';
+    } else if (bicho === 'porco' || bicho === 'leitão' || bicho === 'leitao' || bicho === 'suíno' || bicho === 'porca' || bicho === 'leitoa' || bicho === 'suino') {
+        // Porco
+        img.src = 'ft-porco.png'
+        document.body.style.backgroundColor = '#e0909d'
     } else {
         // BICINHO NÃO ENCONTRADO!!!
         img.src = 'imagem-nao-encontrada.png';
