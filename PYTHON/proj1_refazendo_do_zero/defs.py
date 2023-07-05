@@ -18,6 +18,15 @@ import os
 def limpaTerminal():
     return os.system('cls' if os.name == 'nt' else 'clear')
 
+
+def linha():
+    return '-' * 32
+
+
+def menu():
+    
+    
+    
 def cadastro():
     limpaTerminal()
     print('=== < \033[1;92m        CADASTRAR USUÁRIO\033[m       > ===')
