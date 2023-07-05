@@ -43,11 +43,11 @@ for linha in lerlogins.readlines():
      
     lerlogins.close()
     
-    senha      = validar.senha()
-    email      = validar.email()
-    data       = validar.data()
-    telefone   = validar.cel()
-    endereço   = validar.ed()
+    senha    = validar.senha()
+    email    = validar.email()
+    data     = validar.data()
+    telefone = validar.cel()
+    endereço = validar.ed()
     
     limpaTerminal()
     linha()

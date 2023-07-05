@@ -6,7 +6,12 @@ login = validar.login()
 lerLogins = open('logins.txt', 'r')
 um "FOR" para correr logins.readlines()
 Se login for igual a valores[1].split() - cria uma lista
-limpaTerminal() - limpa o Terminal 
+limpaTerminal() - limpa o Terminal
+    senha    = validar.senha()
+    email    = validar.email()
+    data     = validar.data()
+    telefone = validar.cel()
+    endereço = validar.ed()
 """
 import os
 
