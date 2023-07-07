@@ -61,6 +61,18 @@ function carregar() {
         // Peixe
         img.src = 'ft-peixe.png'
         document.body.style.backgroundColor = '#e05e24';
+    } else if (bicho === 'vaca'|| bicho === 'Vaca' || bicho === 'Vaquinha' || bicho === 'vaquinha') {
+        // Vaca
+        img.src = 'ft-vaca.png'
+        document.body.style.backgroundColor = '#521001';
+    } else if (bicho === 'ave'|| bicho === 'Ave' || bicho === 'Pássaro' || bicho === 'pássaro' || bicho === 'Passarinho' || bicho === 'passarinho' || bicho === 'passaro') {
+        // Passarinho
+        img.src = 'ft-ave.png'
+        document.body.style.backgroundColor = '#074264';
+    } else if (bicho === 'Hipo'|| bicho === 'hipo' || bicho === 'Hipopótamo' || bicho === 'hipopótamo' || bicho === 'hipopotamo' || 'hipopotamo') {
+        // Hipopótamo
+        img.src = 'ft-hipo.png'
+        document.body.style.backgroundColor = '#776b76';
     }  else {
         // BICINHO NÃO ENCONTRADO!!!
         img.src = 'imagem-nao-encontrada.png';
