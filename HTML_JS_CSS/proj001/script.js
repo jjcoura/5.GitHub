@@ -41,6 +41,22 @@ function carregar() {
         // Girafa
         img.src = 'ft-girafa.png'
         document.body.style.backgroundColor = '#85501d';
+    } else if (bicho === 'burro'|| bicho === 'Burro' || bicho === 'Jegue' || bicho === 'jegue' || bicho === 'Jumento'|| bicho === 'jumentinho'|| bicho === 'jumento' || bicho === 'Asno' || bicho === 'asno') {
+        // Burro
+        img.src = 'ft-burro.png'
+        document.body.style.backgroundColor = '#514847'; 
+    } else if (bicho === 'pato'|| bicho === 'Pato' || bicho === 'Patinho' || bicho === 'Pata' || bicho === 'pata' || bicho === 'patinho') {
+        // Pato
+        img.src = 'ft-pato.png'
+        document.body.style.backgroundColor = '#d0c7d2';  
+    } else if (bicho === 'jacaré'|| bicho === 'jacare' || bicho === 'Jacaré'|| bicho === 'Jacare'|| bicho === 'crocodilo' || bicho === 'Crocodilo'|| bicho === 'Aligator' || bicho === 'aligator') {
+        // Jacaré
+        img.src = 'ft-jacare.png'
+        document.body.style.backgroundColor = '#4f3815'; 
+    } else if (bicho === 'galo'|| bicho === 'Galo') {
+        // Girafa
+        img.src = 'ft-galo.png'
+        document.body.style.backgroundColor = '#e01b37';
     }  else {
         // BICINHO NÃO ENCONTRADO!!!
         img.src = 'imagem-nao-encontrada.png';
