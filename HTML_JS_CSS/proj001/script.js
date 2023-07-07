@@ -25,7 +25,11 @@ function carregar() {
         // BODE
         img.src = 'ft-bode.png'
         document.body.style.backgroundColor = '#10100e';
-    }     else {
+    } else if (bicho === 'onça'|| bicho === 'Onça' || bicho === 'Onca' || bicho === 'onca') {
+        // Onça
+        img.src = 'ft-onca.png'
+        document.body.style.backgroundColor = '#d75c02';
+    } else {
         // BICINHO NÃO ENCONTRADO!!!
         img.src = 'imagem-nao-encontrada.png';
         document.body.style.backgroundColor = '#f5f5f5';
