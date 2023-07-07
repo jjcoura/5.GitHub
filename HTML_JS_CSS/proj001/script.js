@@ -73,6 +73,10 @@ function carregar() {
         // Hipopótamo
         img.src = 'ft-hipo.png'
         document.body.style.backgroundColor = '#776b76';
+    } else if (bicho === 'galinha'|| bicho === 'Galinha' || bicho === 'Frango' || bicho === 'frango') {
+        // Galinha
+        img.src = 'ft-gali.png'
+        document.body.style.backgroundColor = '#c09c88';
     }  else {
         // BICINHO NÃO ENCONTRADO!!!
         img.src = 'imagem-nao-encontrada.png';
