@@ -77,6 +77,10 @@ function carregar() {
         // Galinha
         img.src = 'ft-gali.png'
         document.body.style.backgroundColor = '#c09c88';
+    } else if (bicho === 'ovelha'|| bicho === 'ovelinha' || bicho === 'Ovelha' || bicho === 'Ovelinha') {
+        // Ovelha
+        img.src = 'ft-ove.png'
+        document.body.style.backgroundColor = '#4c504f';
     }  else {
         // BICINHO NÃO ENCONTRADO!!!
         img.src = 'imagem-nao-encontrada.png';
