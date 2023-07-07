@@ -22,14 +22,26 @@ function carregar() {
         img.src = 'ft-rino.png'
         document.body.style.backgroundColor = '#52555e';
     } else if (bicho === 'Bode' || bicho === 'Cabra' || bicho === 'Cabrito' || bicho === 'bode' || bicho === 'cabra' || bicho === 'cabrito') {
-        // BODE
+        // Bode
         img.src = 'ft-bode.png'
         document.body.style.backgroundColor = '#10100e';
     } else if (bicho === 'onça'|| bicho === 'Onça' || bicho === 'Onca' || bicho === 'onca') {
         // Onça
         img.src = 'ft-onca.png'
         document.body.style.backgroundColor = '#d75c02';
-    } else {
+    } else if (bicho === 'leao'|| bicho === 'Leao' || bicho === 'Leão' || bicho === 'leão' || bicho === 'felino' || bicho === 'Felino') {
+        // Leão
+        img.src = 'ft-leao.png'
+        document.body.style.backgroundColor = '#f2c5a5';
+    } else if (bicho === 'elefante'|| bicho === 'Elefante') {
+        // Elefante
+        img.src = 'ft-elefante.png'
+        document.body.style.backgroundColor = '#646470';
+    } else if (bicho === 'girafa'|| bicho === 'Girafa') {
+        // Girafa
+        img.src = 'ft-girafa.png'
+        document.body.style.backgroundColor = '#85501d';
+    }  else {
         // BICINHO NÃO ENCONTRADO!!!
         img.src = 'imagem-nao-encontrada.png';
         document.body.style.backgroundColor = '#f5f5f5';
