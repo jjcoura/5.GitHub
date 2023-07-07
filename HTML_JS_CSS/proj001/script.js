@@ -21,7 +21,11 @@ function carregar() {
         // Rinoceronte
         img.src = 'ft-rino.png'
         document.body.style.backgroundColor = '#52555e';
-    } else {
+    } else if (bicho === 'Bode' || bicho === 'Cabra' || bicho === 'Cabrito' || bicho === 'bode' || bicho === 'cabra' || bicho === 'cabrito') {
+        // BODE
+        img.src = 'ft-bode.png'
+        document.body.style.backgroundColor = '#10100e';
+    }     else {
         // BICINHO NÃO ENCONTRADO!!!
         img.src = 'imagem-nao-encontrada.png';
         document.body.style.backgroundColor = '#f5f5f5';
