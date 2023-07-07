@@ -54,9 +54,13 @@ function carregar() {
         img.src = 'ft-jacare.png'
         document.body.style.backgroundColor = '#4f3815'; 
     } else if (bicho === 'galo'|| bicho === 'Galo') {
-        // Girafa
+        // Galo
         img.src = 'ft-galo.png'
         document.body.style.backgroundColor = '#e01b37';
+    } else if (bicho === 'peixe'|| bicho === 'Peixe' || bicho === 'Peixinho' || bicho === 'peixinho') {
+        // Peixe
+        img.src = 'ft-peixe.png'
+        document.body.style.backgroundColor = '#e05e24';
     }  else {
         // BICINHO NÃO ENCONTRADO!!!
         img.src = 'imagem-nao-encontrada.png';
