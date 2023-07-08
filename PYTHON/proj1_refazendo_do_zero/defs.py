@@ -40,8 +40,8 @@ def menu():
 def cadastro():
     limpaTerminal()
     print('=== < \033[1;92m        CADASTRAR USUÁRIO\033[m       > ===')
-    nome = valida.nome()
-    login = valida.login()
+    nome = nome()
+   
     
  
 

@@ -1,6 +1,7 @@
 """Programa desenvolvido para cadastro de clientes
 em uma loja..."""
 from defs import *
-escolha = menu() # a função menu é que vai gerenciar as escolhas.
+from valida import nome
+escolha = menu() 
 if escolha == '1':
-    cadastro() # bom aqui começa a função cadastro
+    cadastro() 

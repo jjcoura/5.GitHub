@@ -8,7 +8,7 @@ def limpaTerminal():
 
 def linha():
     return '-' * 32
-
+ 
 data = datetime.datetime.now()
 dia = data.day
 mes = data.mouth
