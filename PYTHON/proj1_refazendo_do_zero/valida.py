@@ -1,5 +1,5 @@
 from defs import *
-from time import date
+from datetime import date, datetime
 
 def nome():
     while True:
@@ -39,15 +39,53 @@ def email():
             return email.strip()
         else:
             print('\033[31mEmail incorreto por favor corrija!\033[m')
+            
+            
+def validar_nascimento(nascimento):
+    try:
+        formato = "%d/%m/%Y"
+        data_formatada = datetime.strptime(nascimento, formato)
+        dia = data_formatada.day
+        mes = data_formatada.month
+        ano = data_formatada.year
+
+        # Verificar se o mês tem 30 ou 31 dias
+        if (mes in [4, 6, 9, 11]) and dia > 30:
+            return False
+        # Verificar se fevereiro tem 28 ou 29 dias em anos bissextos
+        elif mes == 2:
+            if (ano % 4 == 0 and ano % 100 != 0) or ano % 400 == 0:
+                if dia > 29:
+                    return False
+            else:
+                if dia > 28:
+                    return False
+
+        return True
+    except ValueError:
+        return False
+
+
 def nascimento():
     while True:
         nascimento = input('Data de nascimento (dd/mm/aaaa): ')
         if nascimento == '':
-            print('\033[31mErro! Entrada inválida: \033[m')
+            print('\033[31mErro! Entrada inválida.\033[m')
             continue
         temp = ''.join(nascimento.split())
         if not temp.isnumeric():
-            print('\033[31mDigite uma data de nascimento válida sem letras simbolos ou caracteres no formato (dd/mm/aaaa). Obrigado!\033[m')
+            print('\033[31mDigite uma data de nascimento válida no formato (dd/mm/aaaa).\033[m')
+        elif nascimento.count('/') != 2 or nascimento == '//':
+            print('\033[31mDigite uma data de nascimento válida no formato (dd/mm/aaaa).\033[m')
+        elif not validar_nascimento(nascimento):
+            print('\033[31mData de nascimento inválida. Por favor, insira uma data válida.\033[m')
+        else:
+            dia, mes, ano = nascimento.split('/')
+            return dia, mes, ano
+
+
+dia_nascimento, mes_nascimento, ano_nascimento = nascimento()
+ano_atual = date.today().year
         
 def login():
 def cel():
