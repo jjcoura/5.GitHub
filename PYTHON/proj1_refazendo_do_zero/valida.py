@@ -39,8 +39,16 @@ def email():
             return email.strip()
         else:
             print('\033[31mEmail incorreto por favor corrija!\033[m')
-def data():
-    
+def nascimento():
+    while True:
+        nascimento = input('Data de nascimento (dd/mm/aaaa): ')
+        if nascimento == '':
+            print('\033[31mErro! Entrada inválida: \033[m')
+            continue
+        temp = ''.join(nascimento.split())
+        if not temp.isnumeric():
+            print('\033[31mDigite uma data de nascimento válida sem letras simbolos ou caracteres no formato (dd/mm/aaaa). Obrigado!\033[m')
+        
 def login():
 def cel():
 def endereço():
