@@ -12,9 +12,9 @@ def nome():
                 break
         else:
             return nome.strip('')
-def senha():
+'''def senha():
 def email():
 def data():
 def login():
 def cel():
-def endereço():
+def endereço():'''

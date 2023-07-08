@@ -14,6 +14,7 @@ limpaTerminal() - limpa o Terminal
     endereço = validar.ed()
 """
 import os
+from valida import *
 
 def limpaTerminal():
     return os.system('cls' if os.name == 'nt' else 'clear')
@@ -39,9 +40,9 @@ def menu():
 def cadastro():
     limpaTerminal()
     print('=== < \033[1;92m        CADASTRAR USUÁRIO\033[m       > ===')
-    nome = validar.nome()
-    login = validar.login()
+    nome = valida.nome()
+    login = valida.login()
     
  
-  def validar():
+
         
