@@ -24,7 +24,16 @@ def linha():
 
 
 def menu():
-    
+    print(' ======== <<< \033[1;96m "LOJA LEGAL" \033[m >>> ====== ')
+    print('|   \033[1;36m[1]          \033[m Cadastrar Cliente    |')
+    print('|   \033[1;36m[2]          \033[m Dados do Cliente     |')
+    print('|   \033[1;36m[3]          \033[m Mostrar Clientes     |')
+    print('|   \033[1;36m[4]          \033[m Gerar Relatório      |')
+    print('|   \033[1;36m[0]          \033[m Sair                 |')
+    linha()
+    x = input('\033[1;36mDigite uma das opções acima: \033[m')
+    linha()
+    return x
     
     
 def cadastro():
