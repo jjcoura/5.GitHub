@@ -142,18 +142,18 @@ def endereco():
         dados = {'Rua': input('Rua: '),
                  'Número': input('Número: '),
                  'Complemento': input('Complemento: '),
-                 'CEP': '',
                  'Bairro': input('Bairro: '),
                  'Cidade': input('Cidade: '),
                  'Estado': input('Estado: '),
                  'Referência': input('Digite um ponto de referência de sua casa: ')
         }
         
-        while len(dados['CEP']) != 8 or not dados['CEP'].isdigit():
-            dados['CEP'] = input('CEP: ')
-        else:
+        cep = input('CEP: ')
+        if len(cep) != 8 or not cep.isdigit():
             print('\033[31mERRO! O CEP deve conter exatamente 8 dígitos.\033[m')
-            break
-            
+            continue
         
-        return dados
+        dados['CEP'] = cep
+        break
+    
+    return dados
