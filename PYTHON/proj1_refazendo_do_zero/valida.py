@@ -1,4 +1,4 @@
-import defs
+from defs import *
 from datetime import date, datetime
 
 def nome():

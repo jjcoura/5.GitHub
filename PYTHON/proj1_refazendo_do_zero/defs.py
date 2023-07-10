@@ -1,5 +1,5 @@
 import os
-import valida
+from valida import *
 from datetime import datetime
 
 def limpaTerminal():
@@ -28,8 +28,8 @@ def menu():
 def cadastro():
     limpaTerminal()
     print('=== < \033[1;92m        CADASTRAR USUÁRIO\033[m       > ===')
-    nome = valida.nome()
-    login = valida.login()
+    nome = nome()
+    login = login()
     lerlogins = open('logins.txt', 'r')
     for l in lerlogins.readlines():
         valores = l.split('-') 
@@ -40,11 +40,11 @@ def cadastro():
             linha()
             return
     lerlogins.close()   
-    senha = valida.senha()
-    email = valida.email()
-    data = valida.nascimento()
-    cel = valida.cel()
-    endereco = valida.endereco()
+    senha = senha()
+    email = email()
+    data = nascimento()
+    cel = cel()
+    endereco = endereco()
     limpaTerminal()
     linha()
     print('Cliente cadastrado com sucesso!')
