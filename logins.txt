@@ -1,0 +1,1 @@
+Nome: José Geraldo - Login: 123As@ - Senha: None - Email: jg@gmail.com - Data de nascimento: 25/12/1976 - Número de celular: 99878313933 - Endereço: {'Rua': 'Rua do Porto', 'Número': '541', 'Complemento': 'casa G', 'CEP': '25640580', 'Bairro': 'Quadrado', 'Cidade': 'Rio de Janeiro', 'Estado': 'Rio de Janeiro', 'Referência': 'perto de tudo'}

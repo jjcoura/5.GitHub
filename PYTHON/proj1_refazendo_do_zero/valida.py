@@ -7,13 +7,10 @@ def nome():
         if nome == '':
             print('Erro! Entrada inválida! Favor digitar seu nome corretamente!')
             continue
-        temp = ''.join(nome.split(''))
-        for i in temp:
-            if i.isdigit():
-                print('Digite um nome válido.')
-                break
+        if not nome.replace(' ', '').isalpha():
+            print('Digite um nome válido, apenas com letras.')
         else:
-            return nome.strip('')
+            return nome.strip()
         
         
 def senha():
@@ -50,7 +47,7 @@ def validar_nascimento(nascimento):
         ano = data_formatada.year
 
         # Verificar se o mês tem 30 ou 31 dias
-        if (mes in [4, 6, 9, 11]) and dia > 30:
+        if mes in [4, 6, 9, 11] and dia > 30:
             return False
         # Verificar se fevereiro tem 28 ou 29 dias em anos bissextos
         elif mes == 2:
@@ -68,21 +65,42 @@ def validar_nascimento(nascimento):
 
 def nascimento():
     while True:
-        nascimento = input('Data de nascimento (dd/mm/aaaa): ')
-        if nascimento == '':
-            print('\033[31mErro! Entrada inválida.\033[m')
+        dia = input('Digite o dia de nascimento: ')
+        mes = input('Digite o mês de nascimento: ')
+        ano = input('Digite o ano de nascimento: ')
+
+        if not dia.isdigit() or not mes.isdigit() or not ano.isdigit():
+            print('\033[31mErro! Digite apenas números para o dia, mês e ano de nascimento.\033[m')
             continue
-        temp = ''.join(nascimento.split())
-        if not temp.isnumeric():
-            print('\033[31mDigite uma data de nascimento válida no formato (dd/mm/aaaa).\033[m')
-        elif nascimento.count('/') == 2 and nascimento != '//':
-            print('\033[31mDigite uma data de nascimento válida no formato (dd/mm/aaaa).\033[m')
-        elif not validar_nascimento(nascimento):
+
+        dia = int(dia)
+        mes = int(mes)
+        ano = int(ano)
+
+        # Verificar se a data de nascimento é válida
+        if dia < 1 or dia > 31 or mes < 1 or mes > 12:
             print('\033[31mData de nascimento inválida. Por favor, insira uma data válida.\033[m')
-        else:
-            dia, mes, ano = nascimento.split('/')
-            return dia, mes, ano
-        
+            continue
+
+        # Verificar se o mês tem 30 ou 31 dias
+        if (mes in [4, 6, 9, 11]) and dia > 30:
+            print('\033[31mData de nascimento inválida. Por favor, insira uma data válida.\033[m')
+            continue
+
+        # Verificar se fevereiro tem 28 ou 29 dias em anos bissextos
+        if mes == 2:
+            if (ano % 4 == 0 and ano % 100 != 0) or ano % 400 == 0:
+                if dia > 29:
+                    print('\033[31mData de nascimento inválida. Por favor, insira uma data válida.\033[m')
+                    continue
+            else:
+                if dia > 28:
+                    print('\033[31mData de nascimento inválida. Por favor, insira uma data válida.\033[m')
+                    continue
+
+        # Se chegou até aqui, a data de nascimento é válida
+        return [dia, mes, ano]
+
 
 def login():
     while True:
@@ -102,6 +120,7 @@ def login():
             print('\033[31mERRO! O login deve conter pelo menos um símbolo.\033[m')
         else:
             return login.strip()
+  
     
     
 def cel():
@@ -131,7 +150,10 @@ def endereco():
         }
         
         while len(dados['CEP']) != 8 or not dados['CEP'].isdigit():
-            print('\033[31mERRO! O CEP deve conter exatamente 8 dígitos.\033[m')
             dados['CEP'] = input('CEP: ')
+        else:
+            print('\033[31mERRO! O CEP deve conter exatamente 8 dígitos.\033[m')
+            break
+            
         
         return dados

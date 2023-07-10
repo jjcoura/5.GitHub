@@ -1,9 +1,10 @@
 from defs import *
 limpaTerminal()
+verifica_arquivo_logins()
 
 while True:
     escolha = menu()
-    
+
     if escolha == '1':
         cadastro()
     elif escolha == '2':
@@ -13,6 +14,7 @@ while True:
     elif escolha == '4':
         relatorio()
     elif escolha == '0':
+        break
         print('\033[1;33mFINALIZANDO O PROGRAMA...\033[m')
     else:
         limpaTerminal()
