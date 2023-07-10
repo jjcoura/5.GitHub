@@ -105,7 +105,6 @@ def login():
             print('\033[31mERRO! O login deve conter pelo menos um símbolo.\033[m')
         else:
             return login.strip()
-
     
     
 def cel():
@@ -119,6 +118,7 @@ def cel():
             print('\033[31mERRO! Número de telefone inválido!\033[m')
         else:
             return cel
+        
     
 def endereco():
     while True:
