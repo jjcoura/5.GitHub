@@ -88,5 +88,53 @@ dia_nascimento, mes_nascimento, ano_nascimento = nascimento()
 ano_atual = date.today().year
         
 def login():
+    while True:
+        print('Seu login deve conter no máximo 12 caracteres com letras maiúsculas, minúsculas, símbolos e números.')
+        login = input('Digite seu login: ')
+        if login == '':
+            print('\033[31mERRO! Login inválido!\033[m')
+        elif len(login) > 12:
+            print('\033[31mERRO! O login deve ter no máximo 12 caracteres entre letras, números e símbolos, incluindo letras maiúsculas.\033[m')
+        elif not any(char.isupper() for char in login):
+            print('\033[31mERRO! O login deve conter pelo menos uma letra maiúscula.\033[m')
+        elif not any(char.islower() for char in login):
+            print('\033[31mERRO! O login deve conter pelo menos uma letra minúscula.\033[m')
+        elif not any(char.isdigit() for char in login):
+            print('\033[31mERRO! O login deve conter pelo menos um número.\033[m')
+        elif not any(not char.isalnum() for char in login):
+            print('\033[31mERRO! O login deve conter pelo menos um símbolo.\033[m')
+        else:
+            return login.strip()
+
+    
+    
 def cel():
-def endereço():
+    while True:
+        cel = input('Digite seu número de telefone: ')
+        if cel == '':
+            print('\033[31mERRO! Entrada inválida. Digite novamente seu número de telefone!\033[m')
+        elif not cel.isnumeric():
+            print('\033[31mERRO! Digite apenas números.\033[m')
+        elif len(cel) < 9 or len(cel) > 11:
+            print('\033[31mERRO! Número de telefone inválido!\033[m')
+        else:
+            return cel
+    
+def endereco():
+    while True:
+        print('=========\033[1;32mSeu endereço completo!\033[m ========') 
+        dados = {'Rua': input('Rua: '),
+                 'Número': input('Número: '),
+                 'Complemento': input('Complemento: '),
+                 'CEP': '',
+                 'Bairro': input('Bairro: '),
+                 'Cidade': input('Cidade: '),
+                 'Estado': input('Estado: '),
+                 'Referência': input('Digite um ponto de referência de sua casa: ')
+        }
+        
+        while len(dados['CEP']) != 8 or not dados['CEP'].isdigit():
+            print('\033[31mERRO! O CEP deve conter exatamente 8 dígitos.\033[m')
+            dados['CEP'] = input('CEP: ')
+        
+        return dados
