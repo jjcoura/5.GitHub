@@ -41,6 +41,28 @@ def cadastro():
     limpaTerminal()
     print('=== < \033[1;92m        CADASTRAR USUÁRIO\033[m       > ===')
     nome = nome()
+    login = login()
+lerlogins = open('logins.txt', 'r')
+for l in lerlogins.readlines():
+    valores = l.split('-') 
+    if login == valores[1].split(':')[1].strip():
+        limpaTerminal()
+        linha()
+        print('033[31mLogin Existente!\033[m')
+        linha()
+    lerlogins.close()
+    senha = senha()
+    email = email()
+    data = data()
+    cel = cel()
+    endereco = endereco()
+    limpaTerminal()
+    linha()
+    print('Cliente cadastrado com sucesso!')
+    linha()
+    logins = open('logins.txt', 'a')
+    logins.write(f'Nome: {nome} - Login: {login} - Senha: {senha} - Email: {email} - Data de nascimento: {nascimento} - Número de celular: {cel} - Endereço: {endereco}\n')
+    logins.close()
    
     
  
