@@ -1,19 +1,17 @@
 import os
-from valida import *
+import valida
 from datetime import datetime
 
 def limpaTerminal():
     return os.system('cls' if os.name == 'nt' else 'clear')
-
 
 def linha():
     return '-' * 32
 
 data = datetime.now()
 dia = data.day
-mes = data.mouth
+mes = data.month
 ano = data.year
-
 
 def menu():
     print(' ======== <<< \033[1;36m "LOJA LEGAL" \033[m >>> ====== ')
@@ -26,35 +24,35 @@ def menu():
     x = input('\033[1;36mDigite uma das opções acima: \033[m')
     linha()
     return x
-    
-    
+
 def cadastro():
     limpaTerminal()
     print('=== < \033[1;92m        CADASTRAR USUÁRIO\033[m       > ===')
-    nome = nome()
-    login = login()
-lerlogins = open('logins.txt', 'r')
-for l in lerlogins.readlines():
-    valores = l.split('-') 
-    if login == valores[1].split(':')[1].strip():
-        limpaTerminal()
-        linha()
-        print('033[31mLogin Existente!\033[m')
-        linha()
-    lerlogins.close()
-    senha = senha()
-    email = email()
-    data = data()
-    cel = cel()
-    endereco = endereco()
+    nome = valida.nome()
+    login = valida.login()
+    lerlogins = open('logins.txt', 'r')
+    for l in lerlogins.readlines():
+        valores = l.split('-') 
+        if login == valores[1].split(':')[1].strip():
+            limpaTerminal()
+            linha()
+            print('033[31mLogin Existente!\033[m')
+            linha()
+            return
+    lerlogins.close()   
+    senha = valida.senha()
+    email = valida.email()
+    data = valida.nascimento()
+    cel = valida.cel()
+    endereco = valida.endereco()
     limpaTerminal()
     linha()
     print('Cliente cadastrado com sucesso!')
     linha()
     logins = open('logins.txt', 'a')
-    logins.write(f'Nome: {nome} - Login: {login} - Senha: {senha} - Email: {email} - Data de nascimento: {nascimento} - Número de celular: {cel} - Endereço: {endereco}\n')
+    logins.write(f'Nome: {nome} - Login: {login} - Senha: {senha} - Email: {email} - Data de nascimento: {data} - Número de celular: {cel} - Endereço: {endereco}\n')
     logins.close()
-    
+    return
     
 def mostrarDados():
     limpaTerminal()
@@ -64,27 +62,27 @@ def mostrarDados():
     linha()
     userlogin = input('Login: ')
     usersenha = input('Senha: ')
-    validar = False
+    valida = False
     logins = open('logins.txt', 'r')
     for l in logins.readlines():
         valores = l.split('-')
-        if userlogin == valores[1].split(':')[1].strip and usersenha in valores[2].strip():
+        if userlogin == valores[1].split(':')[1].strip and usersenha in valores[2].split(':')[1].strip():
             limpaTerminal()
             linha()
             print('\033[1;32mCliente Logado! Dados do usuário:\033[m')
             linha()
             for p in range(len(valores)):
                 if valores[p].split(':')[0] == 'Endereço':
-                    dictEndereço = eval(valores[p].split('Endereço: ')[1])
-                    for chave in dictEndereço:
-                        print(f'{chave: {dictEndereço[chave]}}')
+                    dictEndereco = eval(valores[p].split('Endereço: ')[1])
+                    for chave in dictEndereco:
+                        print(f'{chave: {dictEndereco[chave]}}')
                 else:
                     print(valores[p])
             linha()
-            validar = True
+            valida = True
             logins.close()
             break
-    if not validar:
+    if not valida:
         limpaTerminal()
         linha()    
         print('\033[1;31mERRO! logoin ou senha inválidos!\033[m')
@@ -95,7 +93,7 @@ def clientesCadastrados():
     limpaTerminal()
     print('=== < \033[1;92m        CLIENTES CADASTRADOS\033[m       > ===')   
     logins = open('logins.txt', 'r')
-    for l in login.readlines():
+    for l in logins.readlines():
         l = linha.split('-')
         print(f'\033[1;92m]{l[0]} | {l[1]}\033[m') 
     linha()  
@@ -110,12 +108,14 @@ def relatorio():
         l = linhas.split('-')
         nomess.append(l[0])
         cc += 1
+    limpaTerminal()
     arquivo = open('dados.txt', 'w+')
     arquivo.write('Relatório de Clientes\n')
+    arquivo.write('\n')
     arquivo.write(f'A loja legal possui {cc} clientes(s)\n')
     for i in range(len(nomess)):
         arquivo.write(str(f'{i + 1}.{nomess[1].split(":")[1]}\n'))
-    arquivo.write(f'Dados, {dia}/{mes}/{ano}.')
+    arquivo.write(f'Brasil, {dia}/{mes}/{ano}.')
     linha()
     print('\033[1;32mRelatorio gerado em "dados.txt"\033[m')
     linha()

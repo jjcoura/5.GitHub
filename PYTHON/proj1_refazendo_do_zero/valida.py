@@ -1,4 +1,4 @@
-from defs import *
+import defs
 from datetime import date, datetime
 
 def nome():
@@ -75,18 +75,15 @@ def nascimento():
         temp = ''.join(nascimento.split())
         if not temp.isnumeric():
             print('\033[31mDigite uma data de nascimento válida no formato (dd/mm/aaaa).\033[m')
-        elif nascimento.count('/') != 2 or nascimento == '//':
+        elif nascimento.count('/') == 2 and nascimento != '//':
             print('\033[31mDigite uma data de nascimento válida no formato (dd/mm/aaaa).\033[m')
         elif not validar_nascimento(nascimento):
             print('\033[31mData de nascimento inválida. Por favor, insira uma data válida.\033[m')
         else:
             dia, mes, ano = nascimento.split('/')
             return dia, mes, ano
-
-
-dia_nascimento, mes_nascimento, ano_nascimento = nascimento()
-ano_atual = date.today().year
         
+
 def login():
     while True:
         print('Seu login deve conter no máximo 12 caracteres com letras maiúsculas, minúsculas, símbolos e números.')
