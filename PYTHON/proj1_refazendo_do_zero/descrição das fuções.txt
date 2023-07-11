@@ -1,0 +1,42 @@
+partes: pji.py, defs.py e valida.py.
+
+pji.py:
+limpaTerminal(): Função que limpa a tela do terminal.
+
+verifica_arquivo_logins(): Função que verifica se o arquivo logins.txt existe. Caso não exista, cria o arquivo vazio.
+
+menu(): Função que exibe o menu principal do programa e retorna a opção escolhida pelo usuário.
+
+cadastro(): Função que realiza o cadastro de um novo cliente. Solicita ao usuário informações como nome, login, senha, e-mail, data de nascimento, número de telefone e endereço. Os dados são armazenados no arquivo logins.txt.
+
+mostrarDados(): Função que exibe os dados de um cliente cadastrado. Solicita ao usuário que faça login fornecendo o login e senha. Em seguida, busca pelos dados do cliente no arquivo logins.txt e os exibe na tela.
+
+clientesCadastrados(): Função que exibe a lista de todos os clientes cadastrados. Lê o arquivo logins.txt e exibe os dados de cada cliente.
+
+relatorio(): Função que gera um relatório com informações sobre os clientes cadastrados. Conta o número de clientes, lista seus nomes e salva o relatório no arquivo dados.txt.
+
+Laço principal: O programa entra em um loop infinito que exibe o menu e processa a opção escolhida pelo usuário até que a opção 0 (Sair) seja selecionada.
+
+defs.py:
+limpaTerminal(): Função que limpa a tela do terminal.
+
+linha(): Função que retorna uma linha de caracteres para ser utilizada na formatação da interface do programa.
+
+menu(): Função que exibe o menu principal do programa e retorna a opção escolhida pelo usuário.
+
+valida.py:
+nome(): Função que solicita e valida o nome do usuário.
+
+senha(): Função que solicita e valida a senha do usuário, que deve ter exatamente seis dígitos.
+
+email(): Função que solicita e valida o e-mail do usuário.
+
+validar_nascimento(nascimento): Função auxiliar que verifica se uma data de nascimento é válida.
+
+nascimento(): Função que solicita e valida a data de nascimento do usuário.
+
+login(): Função que solicita e valida o login do usuário, que deve ter no máximo 12 caracteres e conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um símbolo.
+
+cel(): Função que solicita e valida o número de telefone do usuário.
+
+endereco(): Função que solicita e valida o endereço completo do usuário, incluindo rua, número, complemento, bairro, cidade, estado, referência e CEP.

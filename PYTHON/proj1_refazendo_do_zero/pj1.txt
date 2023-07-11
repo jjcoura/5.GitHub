@@ -1,4 +1,0 @@
-Este projeto é o mesmo de adicionar clientes em uma loja 
-feito anteriomente só que eu tive alguns problemas e 
-resolvi começar tudo do zero novamente, pra ver onde 
-estão os erros.
