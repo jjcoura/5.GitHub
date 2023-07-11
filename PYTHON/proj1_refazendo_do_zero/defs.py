@@ -127,6 +127,7 @@ def clientesCadastrados():
     logins.close()
     linha()
 
+
 def relatorio():
     cc = 0
     nomess = []
@@ -137,7 +138,14 @@ def relatorio():
         cc += 1
     logins.close()
     limpaTerminal()
-    arquivo = open('dados.txt', 'w+')
+    
+    # Criação do diretório 'RELATORIO_proj1' se não existir
+    diretorio = 'RELATORIO_proj1'
+    if not os.path.exists(diretorio):
+        os.makedirs(diretorio)
+    
+    caminho_arquivo = os.path.join(diretorio, 'dados.txt')
+    arquivo = open(caminho_arquivo, 'w+')
     arquivo.write('Relatório de Clientes\n')
     arquivo.write('\n')
     arquivo.write(f'A loja legal possui {cc} cliente(s)\n')
