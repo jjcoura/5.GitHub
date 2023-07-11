@@ -57,35 +57,36 @@ def mostrarDados():
     limpaTerminal()
     print('=== < \033[1;92m        DADOS DO CLIENTE\033[m       > ===')
     linha()
-    print('\033[1;31mFaça login para acessar seus dados!\033[m')
-    linha()
-    userlogin = input('Login: ')
-    usersenha = input('Senha: ')
-    valida = False
     logins = open('logins.txt', 'r')
     for l in logins.readlines():
         valores = l.split('-')
-        if userlogin == valores[1].split(':')[1].strip() and usersenha == valores[2].split(':')[1].strip():
-            limpaTerminal()
-            linha()
-            print('\033[1;32mCliente Logado! Dados do usuário:\033[m')
-            linha()
-            for p in range(len(valores)):
-                if valores[p].split(':')[0] == 'Endereço':
-                    dictEndereco = eval(valores[p].split('Endereço: ')[1])
-                    for chave, valor in dictEndereco.items():
-                        print(f'{chave}: {valor}')
-                else:
-                    print(valores[p])
-            linha()
-            valida = True
-            break
-    logins.close()
-    if not valida:
         limpaTerminal()
         linha()
-        print('\033[1;31mERRO! Login ou senha inválidos!\033[m')
+        print('\033[1;32mCliente Logado! Dados do usuário:\033[m')
         linha()
+        for p in range(len(valores)):
+            if valores[p].split(':')[0] == 'Endereço':
+                dictEndereco = eval(valores[p].split('Endereço: ')[1])
+                for chave, valor in dictEndereco.items():
+                    print(f'{chave}: {valor}')
+            else:
+                print(valores[p])
+        linha()
+    logins.close()
+    
+    
+def senha():
+    while True:
+        print('Digite uma senha com seis dígitos!')
+        print('Conselho: "evite datas de aniversário ou senhas sequenciais".')
+        senha = input('Senha: ')
+        if senha == '':
+            print('\033[31mErro! Senha indefinida! Favor digitar uma senha válida!\033[m')
+        elif len(senha) != 6:
+            print('\033[31mErro! A senha deve conter exatamente seis dígitos!\033[m')
+        else:
+            return senha        
+        
 
 def clientesCadastrados():
     limpaTerminal()

@@ -148,11 +148,8 @@ def endereco():
         }
         
         cep = input('CEP: ')
-        if len(cep) != 8 or not cep.isdigit():
-            print('\033[31mERRO! O CEP deve conter exatamente 8 dígitos.\033[m')
-            continue
-        
-        dados['CEP'] = cep
+        if len(cep) != 8 or not cep.isdigit():   
+            dados['CEP'] = cep
         break
     
     return dados
