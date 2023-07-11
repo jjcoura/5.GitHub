@@ -1,0 +1,1 @@
+Nome: Adilson Brandão - Login: 1232456As!@ - Senha: None - Email: ab@gmail.com - Data de nascimento: 22/2/1976 - Número de celular: 321654987 - Endereço: {'Rua': 'Otávio Darquínio', 'Número': '177', 'Complemento': 'Bloco B', 'Bairro': 'Sta Efigênia', 'Cidade': 'São Paulo', 'Estado': 'Sp', 'Referência': 'los', 'CEP': '12365498'}

@@ -1,0 +1,1 @@
+Nome: João Jardel - Login: Jjardel123@ - Senha: None - Email: jj@gmail.com- Data de Nascimento: 26/12/1974 - Número de celular: 987654321 - Endereço: {'Rua': 'Da Pipoca', 'Numero': '123', 'Complemento': 'JG', 'Bairro': 'Lagoinha', 'Cidade': 'Belo Horizonte', 'Referência': 'lá', 'CEP': '98765432'}

@@ -8,7 +8,7 @@ def nome():
             print('Erro! Entrada inválida! Favor digitar seu nome corretamente!')
             continue
         if not nome.replace(' ', '').isalpha():
-            print('Digite um nome válido, apenas com letras.')
+            print('\033[31mERRO! digite um nome válido, apenas com letras.\033[m')
         else:
             return nome.strip()
         
@@ -57,7 +57,6 @@ def validar_nascimento(nascimento):
             else:
                 if dia > 28:
                     return False
-
         return True
     except ValueError:
         return False
