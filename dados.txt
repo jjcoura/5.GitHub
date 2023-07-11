@@ -1,10 +1,11 @@
 Relatório de Clientes
 
-A loja legal possui 5 cliente(s)
+A loja legal possui 6 cliente(s)
 
 1. José Geraldo
 2. Gilson Marques
 3. Ana Carolina
 4. Algusta Meneguel
 5. Jacira Santos
-Brasil, 10/7/2023.
+6. João Jardel
+Brasil, 11/7/2023.

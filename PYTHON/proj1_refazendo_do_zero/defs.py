@@ -58,8 +58,37 @@ def mostrarDados():
     print('=== < \033[1;92m        DADOS DO CLIENTE\033[m       > ===')
     linha()
     logins = open('logins.txt', 'r')
-    for l in logins.readlines():
-        valores = l.split('-')
+    clientes = logins.readlines()
+    logins.close()
+    
+    if len(clientes) == 0:
+        print('\033[1;31mNão há clientes cadastrados!\033[m')
+        linha()
+        return
+    
+    print('Clientes cadastrados:')
+    for i, cliente in enumerate(clientes):
+        print(f'{i+1}. {cliente.strip()}')
+    
+    while True:
+        escolha_cliente = input('Digite o número do cliente para exibir os dados (ou 0 para voltar): ')
+        
+        if escolha_cliente == '0':
+            return
+        
+        if not escolha_cliente.isdigit():
+            print('\033[1;31mERRO! Insira um número válido.\033[m')
+            linha()
+            continue
+        
+        indice_cliente = int(escolha_cliente) - 1
+        
+        if indice_cliente < 0 or indice_cliente >= len(clientes):
+            print('\033[1;31mERRO! Cliente inválido.\033[m')
+            linha()
+            continue
+        
+        valores = clientes[indice_cliente].split('-')
         limpaTerminal()
         linha()
         print('\033[1;32mCliente Logado! Dados do usuário:\033[m')
@@ -72,7 +101,7 @@ def mostrarDados():
             else:
                 print(valores[p])
         linha()
-    logins.close()
+        break
     
     
 def senha():
